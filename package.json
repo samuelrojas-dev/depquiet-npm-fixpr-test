@@ -1,0 +1,12 @@
+{
+  "name": "depquiet-npm-fixpr-test",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "glob": "7.2.0",
+    "express": "4.19.2",
+    "@tailwindcss/typography": "0.5.19",
+    "tailwindcss": "3.4.17"
+  },
+  "description": "Test project for depquiet's npm fix plans. Vulnerable on purpose: do not use."
+}

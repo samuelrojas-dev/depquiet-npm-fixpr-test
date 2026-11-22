@@ -1,0 +1,22 @@
+name: depquiet fixes
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: samuelrojas-dev/depquiet@v0
+        id: depquiet
+        with:
+          fix-pr: "true"
+          fail-on-action: "false"
+      - env:
+          PR_URL: ${{ steps.depquiet.outputs.fix-pr-url }}
+        run: |
+          echo "Fix pull request: $PR_URL"
